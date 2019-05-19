@@ -1,0 +1,28 @@
+      <div class="row">
+        <div class="margin">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title"><%= @blog.title %></span> 
+              <p><%= @blog.text %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="margin">
+        <% if current_user %>
+          <%= form_with model: [@blog, @comment], id: 'js', local: true do |f| %>
+            <%= f.text_field :text, placeholder: 'コメント', style: "width: 25em", id: 'js_text', value: '' %>
+            <%= button_tag type: "submit", class: "waves-effect waves-light btn" do %>
+              送信する
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+      <div>
+          <% if @comments%>
+            <% @comments.each do |comment| %>
+              <%= render partial: "comments", locals: { comment: comment } %>
+            <% end %>
+          <% end %>
+          <%= paginate(@comments) %>
+      </div>

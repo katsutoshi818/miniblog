@@ -1,0 +1,6 @@
+<div class="main">
+<% @blogs.each do |blog| %>
+  <%= render partial: "blogs", locals: { blog: blog } %>
+<% end %>
+<%= paginate(@blogs) %>
+</div>

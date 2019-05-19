@@ -1,0 +1,17 @@
+<div class="row">
+  <%= form_with model: @blog ,local: true, class: "col, s12" do |f| %>
+    <div class="row">
+      <div class="input-field col s12">
+        <div>
+          <%= f.text_field :title, placeholder: '題名', style: "width: 20em", value: '' %>
+        </div>
+        <div>
+          <%= f.text_area :text, placeholder: '本文', style: "width: 36em; height: 74px;", value: '' %>
+        </div>
+      </div>
+    </div>
+    <%= button_tag type: "submit", class: "waves-effect waves-light btn" do %>
+    投稿する
+    <% end %>
+  <% end %>
+</div>

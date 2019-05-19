@@ -1,0 +1,11 @@
+.margin{
+  margin: 0 auto;
+  width: 50%;
+}
+
+.pagination2{
+  width: 50%;
+  margin: 0 auto;
+  background-color: #42a5f5;
+  font-size: 18px;
+}
